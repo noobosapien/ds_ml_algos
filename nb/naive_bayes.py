@@ -65,6 +65,7 @@ def bayes_probability(heading, complete_data, incomplete_data, enquired_column):
             )
 
         incomplete_item[enquired_column] = complete_probs
+
         completed_items.append(incomplete_item)
 
     return completed_items
@@ -76,6 +77,11 @@ if len(sys.argv) < 2:
 (heading, complete_data, incomplete_data, enquired_column) = (
     common.csv_file_to_ordered_data(sys.argv[1])
 )
+
+# print(heading)
+# print(complete_data)
+# print(incomplete_data)
+# print(enquired_column)
 
 completed_data = bayes_probability(
     heading, complete_data, incomplete_data, enquired_column
